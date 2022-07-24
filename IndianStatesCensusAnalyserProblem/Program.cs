@@ -8,8 +8,7 @@ namespace IndianStateCensusAnalyserProblem
         static string indianStateCensusHeaders = "State,Population,AreaInSqKm,DensityPerSqKm";
 
         static string indianStateCensusFilePath = @"F:\Day29_Indian States Census Analyser Problem\IndianStatesCensusAnalyserProblem\IndianStatesCensusAnalyserProblem\CSV\IndiaStateCensusData.csv";
-
-
+        static string wrongIndianStateCensusFilePath = @"F:\Day29_Indian States Census Analyser Problem\IndianStatesCensusAnalyserProblem\IndianStatesCensusAnalyserProblem\CSV\";
 
         static void Main(string[] args)
         {
@@ -19,6 +18,9 @@ namespace IndianStateCensusAnalyserProblem
 
             // Loading the Census Data File
             indianCensusAdapter.LoadCensusData(indianStateCensusFilePath, indianStateCensusHeaders);
+
+            //1.2
+            indianCensusAdapter.LoadCensusData(wrongIndianStateCensusFilePath, indianStateCensusHeaders);
         }
     }
 }
