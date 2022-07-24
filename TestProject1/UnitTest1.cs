@@ -1,6 +1,6 @@
 
 using NUnit.Framework;
-using IndianStatesCensusAnalyserProblem;
+using IndianStateCensusAnalyserProblem;
 
 namespace TestProject1
 {
