@@ -7,7 +7,7 @@ namespace IndianStateCensusAnalyserProblem
         // CSV Firl Paths 
         static string indianStateCensusHeaders = "State,Population,AreaInSqKm,DensityPerSqKm";
 
-        static string indianStateCensusFilePath = @"F:\Day29_Indian States Census Analyser Problem\IndianStatesCensusAnalyserProblem\CSV\IndiaStateCensusData.csv";
+        static string indianStateCensusFilePath = @"F:\Day29_Indian States Census Analyser Problem\IndianStatesCensusAnalyserProblem\IndianStatesCensusAnalyserProblem\CSV\IndiaStateCensusData.csv";
 
 
 
