@@ -21,6 +21,7 @@ namespace TestProject1
 
         static string indianStateCodeFilePath = @"F:\Day29_Indian States Census Analyser Problem\IndianStatesCensusAnalyserProblem\IndianStatesCensusAnalyserProblem\CSV\IndiaStateCodes.csv";
         static string wrongIndianStateCodeFilePath = @"F:\Day29_Indian States Census Analyser Problem\IndianStatesCensusAnalyserProblem\IndianStatesCensusAnalyserProblem\CSV\StateCodeData.csv";
+        static string wrongIndianStateCodeFileType = @"F:\Day29_Indian States Census Analyser Problem\IndianStatesCensusAnalyserProblem\IndianStatesCensusAnalyserProblem\CSV\IndiaStateCodes.txt";
 
         IndianStateCensusAnalyserProblem.CensusAnalyser censusAnalyser;
         Dictionary<string, CensusDTO> totalRecord;
@@ -91,6 +92,13 @@ namespace TestProject1
         {
             var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(CensusAnalyser.Country.INDIA, wrongIndianStateCodeFilePath, indianStateCodeHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, stateException.eType);
+        }
+        //TC 2.3 -While giving incorrect type CSV File it should Returns a custom Exception
+        [Test]
+        public void GivenWrongIndianStateCodeFileType_WhenReaded_ShouldReturnINVALID_FILE_TYPE()
+        {
+            var stateCodeException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(CensusAnalyser.Country.INDIA, wrongIndianStateCodeFileType, indianStateCodeHeaders));
+            Assert.AreEqual(CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE, stateCodeException.eType);
         }
 
     }
